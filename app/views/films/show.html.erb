@@ -18,9 +18,15 @@
 </p>
 
 <p>
+  <strong>Cinema: </strong>
+  <%= Cinema.find(@film.cinema_id).name %>
+</p>
+
+<p>
   <strong>Synopsis:</strong>
   <%= @film.synopsis %>
 </p>
+
 
 <%= link_to 'Edit', edit_film_path(@film) %> |
 <%= link_to 'Back', films_path %>

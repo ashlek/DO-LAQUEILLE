@@ -36,8 +36,12 @@
     <%= f.text_field :director %>
   </div>
   <div class="field">
-    <%= f.label :note %><br>
-    <%= f.number_field :note %>
+    <%= f.label :Note %><br>
+    <%= f.fields_for :notes, Note.new do |fn| %>
+		<%= fn.number_field :value %>
+		<%= f.label :Spectateur %>
+		<%= fn.collection_select(:spectateur_id,Spectateur.all,:id, :name, {:style => "width: 142px;"}) %>
+	<% end %>
   </div>
   <div class="field">
     <%= f.label :synopsis %><br>

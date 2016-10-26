@@ -1,0 +1,1 @@
+json.partial! "spectateurs/spectateur", spectateur: @spectateur

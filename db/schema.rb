@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161014182551) do
+ActiveRecord::Schema.define(version: 20161026103507) do
 
   create_table "cinemas", force: :cascade do |t|
     t.string   "name"
@@ -32,6 +32,23 @@ ActiveRecord::Schema.define(version: 20161014182551) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "cinema_id"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.integer  "value"
+    t.integer  "film_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "spectateur_id"
+  end
+
+  add_index "notes", ["film_id"], name: "index_notes_on_film_id"
+
+  create_table "spectateurs", force: :cascade do |t|
+    t.string   "name"
+    t.text     "descripton"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

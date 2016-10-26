@@ -1,0 +1,1 @@
+json.array! @spectateurs, partial: 'spectateurs/spectateur', as: :spectateur

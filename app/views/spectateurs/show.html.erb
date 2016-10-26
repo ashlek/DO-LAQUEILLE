@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @spectateur.name %>
+</p>
+
+<p>
+  <strong>Descripton:</strong>
+  <%= @spectateur.descripton %>
+</p>
+
+<%= link_to 'Edit', edit_spectateur_path(@spectateur) %> |
+<%= link_to 'Back', spectateurs_path %>

@@ -10,6 +10,8 @@ class FilmsController < ApplicationController
   # GET /films/1
   # GET /films/1.json
   def show
+  @film=Film.find(params[:id])
+    
   end
 
   # GET /films/new
@@ -69,6 +71,6 @@ class FilmsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def film_params
-      params.require(:film).permit(:image, :title, :director, :synopsis,notes_attributes:[:value, :cinema_id, :id])
+      params.require(:film).permit(:image, :title, :director, :synopsis,:cinema_id,notes_attributes:[:value, :spectateur_id, :id])
     end
 end

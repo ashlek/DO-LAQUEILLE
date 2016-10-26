@@ -10,6 +10,7 @@ class SpectateursController < ApplicationController
   # GET /spectateurs/1
   # GET /spectateurs/1.json
   def show
+   @spectateur=Spectateur.find(params[:id])
   end
 
   # GET /spectateurs/new

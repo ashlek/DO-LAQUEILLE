@@ -21,7 +21,7 @@
 	<td><%= image_tag(film.image, width:250, height:250) %></td> 
         <td><%= film.title %></td>
         <td><%= film.director %></td>
-        <td><%= film.note %></td>
+        <td><%= film.moyenne %></td>
         <td><%= film.synopsis %></td>
 	<td><%= Cinema.find(film.cinema_id).name %></td>
         <td><%= link_to 'Show', film %></td>

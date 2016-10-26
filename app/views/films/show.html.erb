@@ -23,7 +23,7 @@
   <tbody>
     <% @film.notes.each do |h| %>
       <tr>
-	<td><%= h.spectateur_id %></td>
+	<td><%= Spectateur.find(h.spectateur_id).name %></td>
         <td><%= h.value %></td>
       </tr>
     <% end %>

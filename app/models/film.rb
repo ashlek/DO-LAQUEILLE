@@ -9,15 +9,15 @@ class Film < ActiveRecord::Base
 
  def moyenne
 	moye=0
-        if notes.nil? or notes.count==0
+        if notes.nil? 
 		return 0
 	else
 		notes.each do |n|
-	      		moye=moye+n.value
-       	        end
+	      		moye=moye+n.value unless n.value.nil?
+       	       end
 			moye=moye/notes.count
 	end
-	#notes.map { |note| note.star }.sum / notes.count unless notes.empty?
+	#notes.map { |note| note.value }.sum / notes.count unless notes.empty? 
   end
 
 

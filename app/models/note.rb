@@ -1,4 +1,28 @@
 class Note < ActiveRecord::Base
   belongs_to :spectateur
   belongs_to :film
+	validates:spectateur, presence: true
+  #validates:film, presence: true
+  validates:value, presence: false, numericality:{only_integer: true}
+
+	validate :less
+	validate :more
+	
+			
+	def less
+		if value.nil? 
+			return 0
+		else
+			errors.add(:value, "La valeur doit être inférieur à 10") unless value <= 10 
+		end			
+	end 
+
+	def more
+		if value.nil? 
+			return 0
+		else
+			errors.add(:value, "La valeur ne peut être négative") unless value >= 0		
+		end			
+	end
+
 end

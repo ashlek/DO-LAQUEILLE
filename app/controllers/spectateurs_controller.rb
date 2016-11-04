@@ -70,6 +70,6 @@ class SpectateursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def spectateur_params
-      params.require(:spectateur).permit(:name, :descripton)
+      params.require(:spectateur).permit(:name, :descripton,:categorie)
     end
 end

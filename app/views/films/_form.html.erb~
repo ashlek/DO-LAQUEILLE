@@ -1,0 +1,55 @@
+
+<%= form_for(@film, :html => {:multipart => true}) do |f| %>
+  <% if @film.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@film.errors.count, "error") %> prohibited this film from being saved:</h2>
+
+      <ul>
+      <% @film.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+
+
+   <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: 'form-control'%>
+  </div>
+ <div class="field">
+    <%= f.label :cinema %><br>
+    <%= f.collection_select( :cinema_id,Cinema.all,:id, :name, {:style => "width: 142px;"},{:multiple => false}) %>
+
+    
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :director %><br>
+    <%= f.text_field :director %>
+  </div>
+  <div class="field">
+    <%= f.label :Note %><br>
+    <%= f.fields_for :notes, Note.new do |fn| %>
+		<%= fn.input :value %>
+		<%= f.label :Spectateur %>
+		<%= fn.collection_select(:spectateur_id,Spectateur.all,:id, :name, {:style => "width: 142px;"}) %>
+	<% end %>
+  </div>
+  <div class="field">
+    <%= f.label :synopsis %><br>
+    <%= f.text_area :synopsis %>
+  </div>
+  
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

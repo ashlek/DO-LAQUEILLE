@@ -1,0 +1,12 @@
+/usr/bin/ruby2.2 -r ./siteconf20161026-2873-1qye7hi.rb extconf.rb
+
+make "DESTDIR=" clean
+make: *** Pas de règle pour fabriquer la cible « clean ». Arrêt.
+
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+make "DESTDIR=" install
+echo "Nada."
+Nada.

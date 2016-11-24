@@ -10,5 +10,15 @@
   <%= @cinema.location %>
 </p>
 
+<p>
+  <strong>Coordonnée X:</strong>
+  <%= @cinema.x %>
+</p>
+
+<p>
+  <strong>Coordonnée Y:</strong>
+  <%= @cinema.y %>
+</p>
+
 <%= link_to 'Edit', edit_cinema_path(@cinema) %> |
 <%= link_to 'Back', cinemas_path %>
